@@ -24,8 +24,8 @@ const style = {
   p: 4,
 };
 
-const Edit = ({resumeId, onUpdate}) => {
-  console.log(resumeId);
+const Edit = ({ resumeId , onUpdate }) => {
+  
   
 
 const [resumeDetails, setResumeDetails] = useState({
@@ -67,13 +67,17 @@ const [resumeDetails, setResumeDetails] = useState({
 
 
 
+ console.log(resumeId);
+
+
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
 
   useEffect(()=>{
-      getAResume()
+    getAResume()
   },[resumeId])
 
   const getAResume = async()=>{
@@ -258,7 +262,7 @@ else{
                   variant="standard"
                 />
                 <TextField
-                  id="standard-basic" onChange={(e)=>setResumeDetails({...resumeDetails,experience:{...resumeDetails.experience,company:e.target.value}})}
+                  id="standard-basic" onChange={(e)=>setResumeDetails({...resumeDetails,experience:{...resumeDetails.experience,location:e.target.value}})}
                   label="location" value={resumeDetails?.experience?.location}
                   variant="standard"
                 />
@@ -296,7 +300,7 @@ else{
             <div>
               <h3>Professional Summary</h3>
               <div className="d-flex row p-3">
-                <TextField onClick={()=>addSkill(item)} value={resumeDetails?.summary}
+                <TextField onChange={(e)=>setResumeDetails({...resumeDetails, summary: e.target.value})} value={resumeDetails?.summary}
                   id="standard-multiline-static"
                   label="Multiline"
                   multiline

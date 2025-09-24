@@ -20,11 +20,11 @@ import { useState } from 'react';
 const Preview = ({formData, setFormData }) => {
 
 
-const [resumeId, setResumeId]=useState("");
+const [resumeId, setResumeId]= useState("");
 
-const [downloadStatus, setDownloadStatus]=useState("");
+const [downloadStatus, setDownloadStatus]= useState("");
 
-const [updateData, setUpdateData]=useState(false); // to pass status
+const [updateData, setUpdateData]= useState(false); // to pass status
 
 console.log(resumeId);
 

@@ -25,7 +25,7 @@ const Steps = ({formData, setFormData, setIsFinished }) => {
 
   const [inputSkill,setInputSkill] = React.useState("") // hold skill form user side
 
-  const suggestions = ['React','Angular','Express','MongoDB']
+  const suggestions = ['React','Angular','Express','MongoDB'] // suggestions
 
 
 
@@ -186,7 +186,7 @@ const Steps = ({formData, setFormData, setIsFinished }) => {
                       <h5>Added Skills: </h5>
                       {
                         skills.length>0 ?skills.map(item=>(
-                          <span className='btn btn-primary me-2 mt-2'>{item}{" "} <button onClick={()=>handleRemoveSkill(item)} className='btn'>X</button></span>
+                          <span className='btn btn-primary me-2 mt-2'>{item}{" "} <button onClick={()=>handleRemoveSkill(item)} className='btn text-light'>X</button></span>
                         )) :""
                       }
                     </div>
@@ -199,7 +199,7 @@ const Steps = ({formData, setFormData, setIsFinished }) => {
             <div>
                 <h3>Professional Summary</h3>
             <div className="d-flex row p-3">
-                <TextField onChange={e=>setFormData({...formData,summary:e.target.value})}
+                <TextField onChange={(e)=>setFormData({...formData,summary:e.target.value})}
                 value={formData.summary}
           id="standard-multiline-static"
           label="Multiline"
